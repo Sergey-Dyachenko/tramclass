@@ -10,21 +10,28 @@ class Tram
 {
     private $tram_weight;
     private $tram_speed;
-    private $count_of_passenger;
-    private $timetraveling;
+    private $data = array();
 
-    public function __construct($tram_weight, $tram_speed, $count_of_passenger, $timetraveling)
+    public function __construct($tram_weight, $tram_speed)
     {
         $this->tram_weight = $tram_weight;
         $this->tram_speed = $tram_speed;
-        $this->count_of_passenger = $count_of_passenger;
-        $this->timetraveling = $timetraveling;
     }
 
-
-    public function GetDistance()
+    public function __get($name)
     {
-        return $this->tram_speed * $this->timetraveling;
+       return $this->data[$name];
+    }
+
+    public function __set($name, $value)
+    {
+        $this->data[$name] = $value;
+    }
+
+    public function GetDistance($time)
+    {
+        $result = $this->tram_speed * $this->data[$time];
+        var_dump($this->data[$time]);
     }
 
 

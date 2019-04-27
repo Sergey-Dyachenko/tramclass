@@ -5,11 +5,10 @@
  * Date: 24.04.2019
  * Time: 22:21
  */
-
-namespace app\tests\TramTest;
+require './vendor/autoload.php';
 use PHPUnit\Framework\TestCase;
 
-class TramTest extends TestCase
+class TramTest extends  TestCase
 {
    private $tram_weight = 2000;
    private $tram_speed = 80;
