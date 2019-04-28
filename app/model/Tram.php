@@ -31,7 +31,7 @@ class Tram
     public function GetDistance($time)
     {
         $result = $this->tram_speed * $this->data[$time];
-        var_dump($this->data[$time]);
+        return  $result;
     }
 
 
